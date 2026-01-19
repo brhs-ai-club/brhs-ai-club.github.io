@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRHS AI/ML Club - Bridgewater-Raritan High School</title>
+    <link rel="icon" type="image/png" href="assets/logos/cobsquare.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        'brand': '#353a33',
+                        'brand-light': '#6b7263',
+                        'brand-lighter': '#8a9280',
+                        'brand-accent': '#a8b29d',
+                        'dark': {
+                            100: '#0f0f0f',
+                            200: '#1a1a1a',
+                            300: '#2a2a2a',
+                            400: '#3a3a3a',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(168, 178, 157, 0.3); }
+            to { text-shadow: 0 0 30px rgba(168, 178, 157, 0.5); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .glass-morphism {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #353A33, #6b7263, #8a9280, #a8b29d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 25px rgba(107, 114, 99, 0.4);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .text-glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body class="font-mono antialiased bg-dark-100 text-white overflow-x-hidden">
+    <!-- Ultra Modern Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-morphism border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <img src="assets/logos/coblongfixedcolor.png" alt="Logo" class="h-12 w-auto hover:scale-110 transition-transform duration-300 hidden sm:block">
+                        <img src="assets/logos/coblogotransparent.png" alt="Logo" class="h-12 w-auto hover:scale-110 transition-transform duration-300 sm:hidden">
+                        <div class="absolute -inset-2 bg-gradient-to-r from-brand-accent/20 to-brand-light/20 blur-lg opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="relative text-brand-accent font-semibold group">
+                        Home
+                        <span class="absolute -bottom-2 left-0 w-full h-0.5 bg-brand-accent scale-x-100 group-hover:scale-x-110 transition-transform duration-300"></span>
+                    </a>
+                    <a href="pages/about.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 hover:scale-105 font-medium">About</a>
+                    <a href="pages/team.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 hover:scale-105 font-medium">Team</a>
+                    <a href="pages/lessons.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 hover:scale-105 font-medium">Schedule</a>
+                    <a href="pages/contact.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 hover:scale-105 font-medium">Contact</a>
+                    
+                    <!-- More Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-300 hover:text-brand-accent transition-all duration-300 hover:scale-105 font-medium flex items-center space-x-1">
+                            <span>More</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 glass-morphism rounded-2xl border border-gray-700/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="p-2">
+                                <a href="pages/become_staff.html" class="block px-4 py-3 text-gray-300 hover:text-brand-accent hover:bg-brand-accent/10 rounded-xl transition-all duration-300">
+                                    <i class="fas fa-user-plus mr-2"></i>Join the Club
+                                </a>
+                                <a href="pages/blog.html" class="block px-4 py-3 text-gray-300 hover:text-brand-accent hover:bg-brand-accent/10 rounded-xl transition-all duration-300">
+                                    <i class="fas fa-blog mr-2"></i>Blog
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="pages/donate.html" class="bg-gradient-to-r from-brand to-brand-light text-white px-6 py-3 rounded-full font-bold hover:scale-105 hover-glow transition-all duration-300">
+                        Donate
+                    </a>
+                </div>
+                
+                <button class="lg:hidden text-gray-300 hover:text-brand-accent transition-colors" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Modern Mobile Menu -->
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="glass-morphism m-4 rounded-2xl p-6 space-y-4">
+                <a href="index.html" class="block text-brand-accent font-semibold text-lg">Home</a>
+                <a href="pages/about.html" class="block text-gray-300 hover:text-brand-accent transition-colors">About</a>
+                <a href="pages/team.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Team</a>
+                <a href="pages/lessons.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Schedule</a>
+                <a href="pages/contact.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Contact</a>
+                <div class="border-t border-gray-700 pt-4">
+                    <a href="pages/become_staff.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Join the Club</a>
+                    <a href="pages/blog.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Blog</a>
+                </div>
+                <a href="pages/donate.html" class="block bg-gradient-to-r from-brand to-brand-light text-white px-4 py-2 rounded-lg font-bold text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ultra Modern Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-100 via-dark-200 to-dark-300">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-brand-accent/10 rounded-full animate-float blur-xl"></div>
+            <div class="absolute bottom-20 right-10 w-48 h-48 bg-brand-light/10 rounded-full animate-float blur-xl" style="animation-delay: -2s;"></div>
+            <div class="absolute top-1/2 left-20 w-24 h-24 bg-brand-lighter/10 rounded-full animate-float blur-xl" style="animation-delay: -4s;"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-40 h-40 bg-brand-accent/10 rounded-full animate-float blur-xl" style="animation-delay: -1s;"></div>
+        </div>
+        
+        <!-- Grid Pattern Overlay -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="w-full h-full" style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto text-center px-6">
+            <div class="animate-slide-up">
+                <h1 class="text-6xl md:text-8xl font-bold mb-8 text-shadow">
+                    Bridgewater-Raritan
+                    <span class="gradient-text block mt-4 text-glow">AI/ML Club</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed" style="animation-delay: 0.2s;">
+                    Hands-on machine learning, data science, and responsible AI built by students for students.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center" style="animation-delay: 0.4s;">
+                    <a href="pages/lessons.html" class="group relative bg-gradient-to-r from-brand to-brand-light text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 hover-glow">
+                        <span class="relative z-10">View Schedule</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-brand-light to-gray-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </a>
+                    <a href="pages/about.html" class="group relative bg-gradient-to-r from-brand to-brand-light text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 hover-glow">
+                        <span class="relative z-10">About the Club</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-brand-light to-gray-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Quote Section -->
+    <section class="py-32 relative overflow-hidden bg-dark-200">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand/5 to-brand-light/5"></div>
+        <div class="relative z-10 max-w-5xl mx-auto text-center px-6">
+            <div class="glass-morphism rounded-3xl p-12" data-aos="fade-up">
+                <blockquote class="text-3xl md:text-5xl font-light text-white mb-8 leading-relaxed" id="quote-text">
+                    "The best way to learn AI is to build with it."
+                </blockquote>
+                <cite class="text-2xl gradient-text font-semibold" id="quote-author">- BRHS AI/ML Club</cite>
+                <p class="text-gray-400 mt-8 max-w-3xl mx-auto text-lg leading-relaxed" id="quote-blurb">
+                    We focus on practical projects, responsible discussions, and peer learning so everyone can participate.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ultra Modern What We Do Section -->
+    <section class="py-32 bg-dark-100 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-6" data-aos="fade-up">
+                    What We <span class="gradient-text">Do</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                    Building skills through weekly sessions, projects, and shared resources.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-morphism rounded-3xl p-10 h-full hover:scale-105 transition-all duration-500 hover-glow">
+                        <div class="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-brand to-brand-light rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                            <i class="fas fa-laptop-code text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-6 text-center">Weekly Workshops</h3>
+                        <p class="text-gray-400 leading-relaxed text-center">Student-led lessons and labs that make AI/ML approachable for all skill levels.</p>
+                    </div>
+                </div>
+                
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-morphism rounded-3xl p-10 h-full hover:scale-105 transition-all duration-500 hover-glow">
+                        <div class="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-brand-light to-brand-lighter rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                            <i class="fas fa-brain text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-6 text-center">Hands-On Projects</h3>
+                        <p class="text-gray-400 leading-relaxed text-center">We build models, demos, and experiments that turn ideas into working prototypes.</p>
+                    </div>
+                </div>
+                
+                <div class="group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass-morphism rounded-3xl p-10 h-full hover:scale-105 transition-all duration-500 hover-glow">
+                        <div class="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-brand-lighter to-brand-accent rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                            <i class="fas fa-globe text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-6 text-center">Community + Competitions</h3>
+                        <p class="text-gray-400 leading-relaxed text-center">Hackathons, blog posts, and friendly competitions keep the club creative and connected.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Stats Counter Section -->
+    <section class="py-32 bg-gradient-to-r from-brand/10 to-brand-light/10 relative overflow-hidden">
+        <div class="absolute inset-0 bg-dark-200/50"></div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center px-6">
+            <div class="glass-morphism rounded-3xl p-16" data-aos="fade-up">
+                <div class="text-7xl md:text-9xl font-bold gradient-text mb-6 animate-glow" id="counter">12</div>
+                <p class="text-2xl md:text-3xl text-white font-semibold">sessions planned this semester</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Focus Areas Section -->
+    <section class="py-32 bg-dark-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center text-white mb-20" data-aos="fade-up">
+                Focus <span class="gradient-text">Areas</span>
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 max-w-5xl mx-auto items-center">
+                <div class="group col-span-1" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-morphism rounded-2xl p-8 hover:scale-110 transition-all duration-300 hover-glow text-center h-32 flex flex-col items-center justify-center">
+                        <i class="fas fa-code text-3xl text-brand-accent mb-3"></i>
+                        <p class="font-semibold text-white text-sm">Python</p>
+                    </div>
+                </div>
+                <div class="group col-span-1" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-morphism rounded-2xl p-8 hover:scale-110 transition-all duration-300 hover-glow text-center h-32 flex flex-col items-center justify-center">
+                        <i class="fas fa-database text-3xl text-brand-accent mb-3"></i>
+                        <p class="font-semibold text-white text-sm">Data Prep</p>
+                    </div>
+                </div>
+                <div class="group col-span-1" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-morphism rounded-2xl p-8 hover:scale-110 transition-all duration-300 hover-glow text-center h-32 flex flex-col items-center justify-center">
+                        <i class="fas fa-brain text-3xl text-brand-accent mb-3"></i>
+                        <p class="font-semibold text-white text-sm">ML Basics</p>
+                    </div>
+                </div>
+                <div class="group col-span-1" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass-morphism rounded-2xl p-8 hover:scale-110 transition-all duration-300 hover-glow text-center h-32 flex flex-col items-center justify-center">
+                        <i class="fas fa-robot text-3xl text-brand-accent mb-3"></i>
+                        <p class="font-semibold text-white text-sm">Neural Nets</p>
+                    </div>
+                </div>
+                <div class="group col-span-1" data-aos="fade-up" data-aos-delay="500">
+                    <div class="glass-morphism rounded-2xl p-8 hover:scale-110 transition-all duration-300 hover-glow text-center h-32 flex flex-col items-center justify-center">
+                        <i class="fas fa-scale-balanced text-3xl text-brand-accent mb-3"></i>
+                        <p class="font-semibold text-white text-sm">Ethics</p>
+                    </div>
+                </div>
+                <div class="group col-span-1" data-aos="fade-up" data-aos-delay="600">
+                    <div class="glass-morphism rounded-2xl p-8 hover:scale-110 transition-all duration-300 hover-glow text-center h-32 flex flex-col items-center justify-center">
+                        <i class="fas fa-diagram-project text-3xl text-brand-accent mb-3"></i>
+                        <p class="font-semibold text-white text-sm">Projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Modern Call to Action Section -->
+    <section class="py-32 bg-gradient-to-br from-dark-200 to-dark-300 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand/5 to-brand-light/5"></div>
+        <div class="relative z-10 max-w-5xl mx-auto text-center px-6">
+            <div class="glass-morphism rounded-3xl p-16" data-aos="fade-up">
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-8">
+                    Ready to <span class="gradient-text">Build With Us?</span>
+                </h2>
+                <p class="text-xl text-gray-300 mb-16 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                    Join the BRHS AI/ML Club to learn, build, and share projects with your peers.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="200">
+                    <a href="pages/lessons.html" class="bg-gradient-to-r from-brand to-brand-light text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 hover-glow transition-all duration-300">
+                        View Schedule
+                    </a>
+                    <a href="pages/contact.html" class="border-2 border-brand text-brand px-10 py-5 rounded-full font-bold text-lg hover:bg-brand hover:text-white transition-all duration-300 hover:scale-105">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ultra Modern Footer -->
+    <footer class="bg-dark-100 border-t border-gray-800/50 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <img src="assets/logos/coblogotransparent.png" alt="Logo" class="h-16 w-auto">
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-8 text-lg">
+                        A Bridgewater-Raritan High School student community focused on building, learning, and sharing AI.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand-light hover:text-white transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand-light hover:text-white transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand-light hover:text-white transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="pages/about.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">About</a></li>
+                        <li><a href="pages/lessons.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Schedule</a></li>
+                        <li><a href="pages/team.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Leadership</a></li>
+                        <li><a href="pages/blog.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6">Get Involved</h3>
+                    <ul class="space-y-4">
+                        <li><a href="pages/contact.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Contact Us</a></li>
+                        <li><a href="pages/become_staff.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Join the Club</a></li>
+                        <li><a href="pages/donate.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center">
+                <p class="text-gray-500 text-lg">&copy; 2026 BRHS AI/ML Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS with enhanced settings
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+
+        // Enhanced mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Enhanced counter animation with modern easing
+        function animateCounter() {
+            const counter = document.getElementById('counter');
+            const target = 12;
+            let current = 0;
+            const duration = 2000;
+            const startTime = performance.now();
+            
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Easing function for smooth animation
+                const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+                current = target * easeOutCubic;
+                
+                counter.textContent = Math.floor(current);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                }
+            }
+            
+            requestAnimationFrame(updateCounter);
+        }
+
+        // Enhanced intersection observer
+        const counterSection = document.getElementById('counter').parentElement;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        observer.observe(counterSection);
+    </script>
+</body>
+</html>
