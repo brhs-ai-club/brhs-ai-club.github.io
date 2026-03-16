@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Intelligence Dividend - BRHS AI/ML Club</title>
+    <meta name="description" content="A featured BRHS AI/ML Club article on how AI is improving healthcare, productivity, and sustainability.">
+    <link rel="icon" type="image/png" href="../assets/logos/cobsquare.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        'brand': '#353a33',
+                        'brand-light': '#6b7263',
+                        'brand-lighter': '#8a9280',
+                        'brand-accent': '#a8b29d',
+                        'dark': {
+                            100: '#0f0f0f',
+                            200: '#1a1a1a',
+                            300: '#2a2a2a',
+                            400: '#3a3a3a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-morphism {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #353A33, #6b7263, #8a9280, #a8b29d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 25px rgba(107, 114, 99, 0.4);
+        }
+    </style>
+</head>
+<body class="font-mono antialiased bg-dark-100 text-white">
+    <nav class="fixed top-0 w-full z-50 glass-morphism border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-4">
+                    <img src="../assets/logos/coblongfixedcolor.png" alt="Logo" class="h-12 w-auto hidden sm:block">
+                    <img src="../assets/logos/coblogotransparent.png" alt="Logo" class="h-12 w-auto sm:hidden">
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">About</a>
+                    <a href="team.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Team</a>
+                    <a href="lessons.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Schedule</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Contact</a>
+
+                    <div class="relative group">
+                        <button class="text-gray-300 hover:text-brand-accent transition-all duration-300 hover:scale-105 font-medium flex items-center space-x-1">
+                            <span>More</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 glass-morphism rounded-2xl border border-gray-700/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="p-2">
+                                <a href="become_staff.html" class="block px-4 py-3 text-gray-300 hover:text-brand-accent hover:bg-brand-accent/10 rounded-xl transition-all duration-300">
+                                    <i class="fas fa-user-plus mr-2"></i>Join the Club
+                                </a>
+                                <a href="blog.html" class="block px-4 py-3 text-brand-accent bg-brand-accent/10 rounded-xl transition-all duration-300">
+                                    <i class="fas fa-blog mr-2"></i>Blog
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="donate.html" class="bg-gradient-to-r from-brand to-brand-light text-white px-6 py-3 rounded-full font-bold hover:scale-105 hover-glow transition-all duration-300">Donate</a>
+                </div>
+
+                <button class="lg:hidden text-gray-300 hover:text-brand-accent" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="glass-morphism m-4 rounded-2xl p-6 space-y-4">
+                <a href="../index.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Home</a>
+                <a href="about.html" class="block text-gray-300 hover:text-brand-accent transition-colors">About</a>
+                <a href="team.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Team</a>
+                <a href="lessons.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Schedule</a>
+                <a href="contact.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Contact</a>
+                <div class="border-t border-gray-700 pt-4">
+                    <a href="become_staff.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Join the Club</a>
+                    <a href="blog.html" class="block text-brand-accent font-semibold text-lg">Blog</a>
+                </div>
+                <a href="donate.html" class="block bg-gradient-to-r from-brand to-brand-light text-white px-4 py-2 rounded-lg font-bold text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative overflow-hidden bg-gradient-to-br from-dark-100 via-dark-200 to-dark-300 pt-32 pb-24">
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 h-32 w-32 rounded-full bg-brand-accent/10 blur-xl"></div>
+            <div class="absolute bottom-16 right-12 h-48 w-48 rounded-full bg-brand-light/10 blur-xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6">
+            <a href="blog.html" class="inline-flex items-center gap-3 text-sm text-brand-accent hover:text-white transition-colors mb-10">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Blog</span>
+            </a>
+            <div class="glass-morphism rounded-3xl p-8 md:p-12" data-aos="fade-up">
+                <div class="flex flex-wrap gap-3 mb-8 text-sm">
+                    <span class="rounded-full border border-brand-accent/40 bg-brand-accent/10 px-4 py-2 text-brand-accent">Featured Article</span>
+                    <span class="rounded-full border border-white/10 px-4 py-2 text-gray-300">March 16, 2026</span>
+                    <span class="rounded-full border border-white/10 px-4 py-2 text-gray-300">4 min read</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight mb-8">
+                    The <span class="gradient-text">Intelligence Dividend</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-4xl leading-relaxed mb-8">
+                    How AI is paying off for humanity through better healthcare, stronger productivity, and faster scientific progress.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 text-gray-400 mb-10">
+                    <span>By BRHS AI/ML Club</span>
+                    <span class="hidden md:inline text-gray-600">/</span>
+                    <span>Adapted from the original PDF article</span>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="../assets/articles/intelligence-dividend.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand to-brand-light text-white px-6 py-4 rounded-full font-bold hover:scale-105 hover-glow transition-all duration-300">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Open Original PDF</span>
+                    </a>
+                    <a href="#article" class="inline-flex items-center justify-center gap-3 border border-white/10 text-white px-6 py-4 rounded-full font-bold hover:border-brand-accent hover:text-brand-accent transition-all duration-300">
+                        <i class="fas fa-book-open"></i>
+                        <span>Read Web Version</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="article" class="py-24 bg-dark-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <article class="glass-morphism rounded-3xl p-8 md:p-12 space-y-14" data-aos="fade-up">
+                <div class="border-l-4 border-brand-accent pl-6">
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        As we move through 2026, the real-world benefits of AI are reshaping healthcare, the economy, and sustainability into a new era of human empowerment.
+                    </p>
+                </div>
+
+                <section class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand to-brand-light flex items-center justify-center">
+                            <i class="fas fa-heart-pulse text-white"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-white">1. Healthcare: Precision and Time</h2>
+                    </div>
+                    <div class="space-y-5 text-lg text-gray-300 leading-relaxed">
+                        <p>
+                            In 2026, AI has evolved from a diagnostic assistant into a foundational partner in global wellness. By automating the clerical burden of medicine, AI tools are giving doctors back their most limited resource: face-to-face time with patients.
+                        </p>
+                        <p>
+                            Ambient listening systems can now transcribe and summarize consultations in real time, which lets clinicians stay focused on the human side of care instead of the keyboard.
+                        </p>
+                        <p>
+                            Beyond administrative relief, generative models are identifying life-saving drug compounds in months rather than decades. AI-powered imaging tools are also helping rural clinics detect anomalies, from early cancers to rare cardiac arrhythmias, with accuracy that used to be limited to major urban hospitals. The result is not just better technology, but a more equitable healthcare system.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-light to-brand-lighter flex items-center justify-center">
+                            <i class="fas fa-chart-line text-white"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-white">2. Economic Growth and Productivity</h2>
+                    </div>
+                    <div class="space-y-5 text-lg text-gray-300 leading-relaxed">
+                        <p>
+                            The global economy is already benefiting from what many describe as the intelligence dividend. AI agents are no longer limited to chatbot-style interactions. They are now managing the complex logistics of global supply chains around the clock, reducing downtime, cutting waste, and lowering costs.
+                        </p>
+                        <p>
+                            For the average professional, AI acts as a force multiplier. Routine data entry, scheduling, and first-pass research can be delegated to intelligent systems, allowing people to spend more time on strategy, creative problem-solving, and the interpersonal work that machines cannot replicate.
+                        </p>
+                        <p>
+                            That productivity surge is creating room for new roles as well, including people who coordinate AI systems, manage synthetic data, and design workflows where humans and models work together effectively.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-lighter to-brand-accent flex items-center justify-center">
+                            <i class="fas fa-leaf text-black"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-white">3. Sustainability and Science</h2>
+                    </div>
+                    <div class="space-y-5 text-lg text-gray-300 leading-relaxed">
+                        <p>
+                            AI has also become one of our strongest tools against the climate crisis. By processing massive streams of environmental data from satellites and sensors, AI systems can optimize renewable energy grids in real time so that wind and solar power are stored and distributed more efficiently.
+                        </p>
+                        <p>
+                            In research settings, AI-driven simulations are accelerating discovery across the green frontier. Scientists are using these systems to identify biodegradable materials and more effective carbon-capture technologies at a pace that would have been nearly impossible only a few years ago.
+                        </p>
+                        <p>
+                            This progress is not just about minimizing harm. It is about discovering new ways to thrive on the planet by solving ecological problems that once felt out of reach.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="space-y-6">
+                    <h2 class="text-3xl font-bold text-white">A Future Focused on the Exceptional</h2>
+                    <div class="space-y-5 text-lg text-gray-300 leading-relaxed">
+                        <p>
+                            The story of AI in 2026 is ultimately a story about people. Delegating repetitive and data-heavy work to intelligent systems does not make humans obsolete. It makes us more effective.
+                        </p>
+                        <p>
+                            The intelligence dividend is visible in the hours returned to a doctor, the creative energy freed up for a designer, and the collective capacity we gain to solve the climate puzzles of our time.
+                        </p>
+                        <p>
+                            The goal remains clear: use AI to handle the predictable, so humans can focus on the exceptional.
+                        </p>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </section>
+
+    <section class="py-24 bg-dark-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass-morphism rounded-3xl p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6" data-aos="fade-up">
+                <div>
+                    <p class="text-sm uppercase tracking-[0.25em] text-brand-accent mb-3">Source File</p>
+                    <h2 class="text-2xl font-bold text-white mb-2">Keep the original PDF attached</h2>
+                    <p class="text-gray-400 leading-relaxed">The blog now has a web-readable version and still links directly to the original article PDF.</p>
+                </div>
+                <a href="../assets/articles/intelligence-dividend.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-white text-black px-6 py-4 rounded-full font-bold hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-download"></i>
+                    <span>Download PDF</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark-100 border-t border-gray-800/50 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <img src="../assets/logos/coblogotransparent.png" alt="Logo" class="h-16 w-auto">
+                        <span class="text-3xl font-bold gradient-text">BRHS AI/ML Club</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-8 text-lg">
+                        A Bridgewater-Raritan High School student community focused on building, learning, and sharing AI.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand-accent hover:text-black transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand-accent hover:text-black transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand-accent hover:text-black transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">About Us</a></li>
+                        <li><a href="lessons.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Schedule</a></li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Leadership</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6">Get Involved</h3>
+                    <ul class="space-y-4">
+                        <li><a href="contact.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Contact Us</a></li>
+                        <li><a href="become_staff.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Join the Club</a></li>
+                        <li><a href="donate.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center">
+                <p class="text-gray-500 text-lg">&copy; 2026 BRHS AI/ML Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
